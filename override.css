@@ -52,3 +52,31 @@ body {
   margin: 0 auto 12px auto;
   display: block;
 }
+
+/* Back-to-top floating button */
+#back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  color: #333;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  font-size: 20px;
+  transition: opacity .2s ease, transform .2s ease;
+}
+#back-to-top.show { display: flex; opacity: 1; transform: translateY(0); }
+#back-to-top:focus { outline: none; box-shadow: 0 0 0 3px rgba(126,200,255,0.35); }
+#back-to-top:hover { background: #e6e6e6; }
+
+@media (max-width: 480px) {
+  #back-to-top { right: 12px; bottom: 20px; width: 40px; height: 40px; font-size: 18px; }
+}

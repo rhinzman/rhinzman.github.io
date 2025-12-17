@@ -367,3 +367,32 @@ document.addEventListener('DOMContentLoaded', function () {
 <script type="text/javascript" src="./main.bc58148c.js"></script></body>
 
 </html>
+
+<!-- Back to top button -->
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+
+<script>
+// Show/hide and smooth-scroll for back-to-top button
+document.addEventListener('DOMContentLoaded', function () {
+  var btn = document.getElementById('back-to-top');
+  if (!btn) return;
+  var showAfter = 300; // px scrolled
+
+  function onScroll() {
+    if (window.scrollY > showAfter) btn.classList.add('show');
+    else btn.classList.remove('show');
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  btn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // accessibility: allow Enter/Space
+  btn.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
+  });
+});
+</script>
