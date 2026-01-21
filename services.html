@@ -40,10 +40,31 @@
       z-index: 1000;
       box-shadow: 0 2px 20px rgba(193, 127, 46, 0.3);
       border-bottom: 1px solid #C17F2E;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    
+    .navbar .logo {
+      height: 60px;
+      width: auto;
+      margin-right: 40px;
+      filter: brightness(0) invert(1);
+      transition: all 0.3s ease;
+    }
+    
+    .navbar .logo:hover {
+      filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(25deg) brightness(1.2);
+    }
+    
+    .navbar .nav-links {
+      display: flex;
+      align-items: center;
     }
     
     .navbar a {
-      float: left;
+      float: none;
       display: block;
       color: #F5F5F5;
       text-align: center;
@@ -262,11 +283,14 @@
 
 <!-- Navigation -->
 <div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="services.html" class="active">Services</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
+  <img src="./assets/a clean, modern land.png" alt="UpGeospatial Logo" class="logo">
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </div>
 
 <!-- Page Header -->
