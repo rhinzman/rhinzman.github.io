@@ -23,12 +23,12 @@
     body {
       font-family: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
-      color: #2d3748;
-      background: #ffffff;
+      color: #F5F5F5;
+      background: #0E0E0E;
     }
     
     .navbar {
-      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      background: #0E0E0E;
       padding: 0;
       margin: 0;
       position: sticky;
@@ -41,7 +41,7 @@
     .navbar a {
       float: left;
       display: block;
-      color: white;
+      color: #F5F5F5;
       text-align: center;
       padding: 18px 28px;
       text-decoration: none;
@@ -55,18 +55,18 @@
     .navbar a:hover {
       background: rgba(255, 255, 255, 0.1);
       transform: translateY(-2px);
-      color: #4299e1;
+      color: #C17F2E;
     }
     
     .navbar a.active {
-      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      background: linear-gradient(135deg, #C17F2E 0%, #B87333 100%);
       box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
-      color: white;
+      color: #F5F5F5;
     }
     
     .page-header {
-      background: linear-gradient(135deg, #1a365d 0%, #2d3748 40%, #2c5282 100%);
-      color: white;
+      background: linear-gradient(135deg, #0E0E0E 0%, #292929 50%, #0E0E0E 100%);
+      color: #F5F5F5;
       text-align: center;
       padding: 120px 20px;
       position: relative;
@@ -100,24 +100,24 @@
     }
     
     .card {
-      background: white;
-      border-radius: 16px;
-      padding: 50px;
+      background: linear-gradient(135deg, #292929 0%, #0E0E0E 100%);
+      border-radius: 20px;
+      padding: 60px;
       margin: 40px 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-      border: 1px solid rgba(0, 0, 0, 0.04);
+      box-shadow: 0 8px 32px rgba(193, 127, 46, 0.2);
+      border: 2px solid #C17F2E;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
     }
     
     .card:hover {
-      box-shadow: 0 20px 50px rgba(26, 54, 93, 0.15);
-      transform: translateY(-6px);
+      box-shadow: 0 25px 60px rgba(193, 127, 46, 0.3);
+      transform: translateY(-8px);
     }
     
     .card h2 {
-      color: #1a365d;
-      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      color: #F5F5F5;
+      background: linear-gradient(135deg, #C17F2E 0%, #B87333 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -135,7 +135,7 @@
       left: 0;
       width: 80px;
       height: 4px;
-      background: linear-gradient(90deg, #4299e1 0%, #3182ce 100%);
+      background: linear-gradient(90deg, #C17F2E 0%, #B87333 100%);
       border-radius: 2px;
     }
     
@@ -149,7 +149,7 @@
       position: relative;
       font-size: 15px;
       line-height: 1.8;
-      color: #4a5568;
+      color: #F5F5F5;
       font-weight: 500;
     }
     
@@ -157,7 +157,7 @@
       content: '✓';
       position: absolute;
       left: 0;
-      color: #4299e1;
+      color: #C17F2E;
       font-weight: 900;
       font-size: 20px;
     }
@@ -180,34 +180,46 @@
     }
     
     .team-member:hover {
-      border-color: #4299e1;
+      border-color: #C17F2E;
       background: linear-gradient(135deg, rgba(66, 153, 225, 0.1), rgba(44, 82, 130, 0.06));
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       box-shadow: 0 15px 40px rgba(66, 153, 225, 0.15);
     }
     
     .team-member h3 {
-      color: #1a365d;
+      color: #F5F5F5;
       margin: 20px 0 15px 0;
       font-size: 20px;
       font-weight: 700;
     }
     
     .team-member p {
-      color: #4a5568;
+      color: #F5F5F5;
       font-size: 15px;
       line-height: 1.8;
     }
     
     footer {
-      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
-      color: white;
+      background: #0E0E0E;
+      color: #F5F5F5;
       text-align: center;
       padding: 40px 20px;
       margin-top: 80px;
       font-size: 14px;
       font-weight: 500;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 3px solid #C17F2E;
+      position: relative;
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 3px;
+      background: linear-gradient(90deg, #C17F2E 0%, #B87333 100%);
+    }
     }
   </style>
 </head>
