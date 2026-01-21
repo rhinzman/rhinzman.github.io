@@ -5,60 +5,305 @@
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
+  <meta content="GIS Services - Geospatial Solutions" name="description">
   <meta name="google" content="notranslate" />
- 
-  <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
 
- 
+  <title>UpGeospatial - GIS Services</title>
 
-  <title>Rawan Hinzman</title>  
-
-<link href="./main.d8e0d294.css" rel="stylesheet" href="main.d8e0d294.css">
-<!-- override pinks with a light warm blue -->
-<link href="./override.css" rel="stylesheet">
-  
-
-<body class="">
-
-<!-- Add your content of header -->
-<div class="background-color-layer" style="background-image: url('assets/rawan.jpg')"
-></div>
+  <link href="./main.d8e0d294.css" rel="stylesheet">
+  <link href="./override.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     
-<main class="content-wrapper">
-  <header class="white-text-container section-container">
-    <div class="text-center">
-      <h1>I am Rawan Hinzman</h1>
-      <p>GIS Specialist</p>  </div> 
-      <p>
-       <div class="text-center">
-           
-           
-        <div class="topnav">
-           
-  <a class="active" href="#About" id="Home">Home</a>
-  <a class = "nav-link" href ="#Projects">Projects</a>
-  <a class = "nav-link" href="#Work">Work</a>
-  <a class = "nav-link" href="#Contact">Contact</a>
- 
-  
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #2d3748;
+      background: #ffffff;
+    }
+    
+    .navbar {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      padding: 0;
+      margin: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 8px 32px rgba(26, 54, 93, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 18px 28px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      color: #4299e1;
+    }
+    
+    .navbar a.active {
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+      color: white;
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 40%, #2c5282 100%);
+      color: white;
+      text-align: center;
+      padding: 160px 20px;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      top: -200px;
+      right: -200px;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(66, 153, 225, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      bottom: -150px;
+      left: -150px;
+    }
+    
+    .hero h1 {
+      font-size: 64px;
+      margin: 0;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -1px;
+      animation: fadeInUp 0.8s ease-out;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .hero p {
+      font-size: 24px;
+      margin: 25px 0 0 0;
+      position: relative;
+      z-index: 1;
+      opacity: 0.95;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .container-custom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 50px;
+      margin: 40px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    
+    .card:hover {
+      box-shadow: 0 20px 50px rgba(26, 54, 93, 0.15);
+      transform: translateY(-6px);
+    }
+    
+    .card h2 {
+      color: #1a365d;
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+      font-size: 36px;
+      font-weight: 800;
+      position: relative;
+      padding-bottom: 30px;
+    }
+    
+    .card h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #4299e1 0%, #3182ce 100%);
+      border-radius: 2px;
+    }
+    
+    .card ul {
+      list-style: none;
+    }
+    
+    .card li {
+      padding: 16px 0;
+      padding-left: 40px;
+      position: relative;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #4a5568;
+      font-weight: 500;
+    }
+    
+    .card li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #4299e1;
+      font-weight: 900;
+      font-size: 20px;
+    }
+    
+    .card p {
+      color: #4a5568;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    
+    .card a {
+      color: #4299e1;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 2px;
+    }
+    
+    .card a:hover {
+      color: #2c5282;
+    }
+    
+    .card a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(90deg, #4299e1, #2c5282);
+      transition: width 0.3s ease;
+    }
+    
+    .card a:hover:after {
+      width: 100%;
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      font-size: 14px;
+      font-weight: 500;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
 
-            
-            
+<body>
+
+<!-- Navigation -->
+<div class="navbar">
+  <a href="index.html" class="active">Home</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
 </div>
+
+<!-- Hero Section -->
+<div class="hero">
+  <h1>UpGeospatial</h1>
+  <p>Professional GIS Services & Geospatial Solutions</p>
 </div>
-</p>
-  
-  </header>
-    </main>
 
+<!-- Main Content -->
+<div class="container-custom">
+  <div class="card">
+    <h2>Welcome to UpGeospatial</h2>
+    <p>We provide comprehensive Geographic Information System (GIS) services tailored to meet your geospatial needs. Whether you're looking to analyze spatial data, create detailed maps, or develop custom GIS solutions, our team of experienced professionals is here to help.</p>
+    <p>With years of expertise in geospatial technology and analysis, we deliver high-quality results that drive informed decision-making for businesses, organizations, and government agencies.</p>
+  </div>
 
-<!-- Add your site or app content here -->
- 
- <div class="container">
-   <div class="row">
-     <div class="col-xs-12">
+  <div class="card">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li><strong>Expert Team:</strong> Experienced GIS professionals with advanced certifications</li>
+      <li><strong>Cutting-Edge Technology:</strong> Latest GIS software and tools</li>
+      <li><strong>Custom Solutions:</strong> Tailored services to fit your specific requirements</li>
+      <li><strong>Quality Assurance:</strong> Rigorous testing and validation of all deliverables</li>
+      <li><strong>Competitive Pricing:</strong> Affordable solutions without compromising quality</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Get Started</h2>
+    <p>Ready to transform your geospatial data into actionable insights? <a href="contact.html">Contact us today</a> to discuss your project requirements and learn how we can help.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 UpGeospatial. All rights reserved. | www.upgeospatial.com</p>
+</footer>
+
+</body>
+</html>
 
         <div class="card">
           <div class="card-block">

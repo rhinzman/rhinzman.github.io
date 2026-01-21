@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="GIS Services - Geospatial Solutions" name="description">
+  <meta name="google" content="notranslate" />
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <title>Services - UpGeospatial</title>
+
+  <link href="./main.d8e0d294.css" rel="stylesheet">
+  <link href="./override.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #2d3748;
+      background: #ffffff;
+    }
+    
+    .navbar {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      padding: 0;
+      margin: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 8px 32px rgba(26, 54, 93, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 18px 28px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      color: #4299e1;
+    }
+    
+    .navbar a.active {
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+      color: white;
+    }
+    
+    .page-header {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 40%, #2c5282 100%);
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      top: -200px;
+      right: -200px;
+    }
+    
+    .page-header h1 {
+      margin: 0;
+      font-size: 52px;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -1px;
+    }
+    
+    .container-custom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 35px;
+      margin: 50px 0;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #4299e1 0%, #3182ce 100%);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 60px rgba(26, 54, 93, 0.15);
+    }
+    
+    .service-card h3 {
+      color: #1a365d;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 15px 0;
+      margin-top: 0;
+    }
+    
+    .service-card p {
+      color: #4a5568;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 50px;
+      margin: 40px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card h2 {
+      color: #1a365d;
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      font-size: 36px;
+      font-weight: 800;
+      position: relative;
+    }
+    
+    .card h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #4299e1 0%, #3182ce 100%);
+      border-radius: 2px;
+    }
+    
+    .card a {
+      display: inline-block;
+      background: linear-gradient(135deg, #4299e1, #3182ce);
+      color: white;
+      padding: 14px 36px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      margin-top: 25px;
+      box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+    
+    .card a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(66, 153, 225, 0.4);
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      font-size: 14px;
+      font-weight: 500;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="services.html" class="active">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Page Header -->
+<div class="page-header">
+  <h1>Our Services</h1>
+</div>
+
+<!-- Main Content -->
+<div class="container-custom">
+  <p style="text-align: center; font-size: 18px;">We offer a comprehensive range of GIS services designed to meet diverse geospatial needs. Explore our service offerings below:</p>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <h3>Spatial Data Analysis</h3>
+      <p>Advanced analysis of geospatial data to uncover patterns, trends, and relationships. We use industry-leading tools and methodologies to extract valuable insights from your geographic information.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Map Creation & Design</h3>
+      <p>Professional map design and creation for presentations, reports, and publications. Our cartographers craft clear, visually compelling maps that effectively communicate spatial information.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Data Management</h3>
+      <p>Comprehensive geospatial database design, development, and management. We ensure your spatial data is organized, accessible, and secure for optimal decision-making.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>GIS Web Applications</h3>
+      <p>Custom web-based GIS applications and interactive mapping solutions. We develop scalable, user-friendly platforms for data visualization and exploration.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Consulting & Planning</h3>
+      <p>Expert GIS consultation for planning, strategy, and implementation. We help organizations optimize their geospatial workflows and technology infrastructure.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Remote Sensing & Imagery</h3>
+      <p>Satellite and aerial imagery analysis, processing, and interpretation. We leverage remote sensing technology to provide detailed land cover classification and change detection.</p>
+    </div>
+  </div>
+
+  <div style="background: #f0f0f0; padding: 30px; border-radius: 5px; margin-top: 30px;">
+    <h2>Interested in Our Services?</h2>
+    <p>Contact us today to discuss how we can support your geospatial projects and initiatives. Our team is ready to provide customized solutions tailored to your unique requirements.</p>
+    <a href="contact.html" style="display: inline-block; background-color: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 3px; margin-top: 10px;">Request a Quote</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 UpGeospatial. All rights reserved. | www.upgeospatial.com</p>
+</footer>
+
+</body>
+</html>

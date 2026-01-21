@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="Contact UpGeospatial - Get in Touch" name="description">
+  <meta name="google" content="notranslate" />
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <title>Contact - UpGeospatial</title>
+
+  <link href="./main.d8e0d294.css" rel="stylesheet">
+  <link href="./override.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #2d3748;
+      background: #ffffff;
+    }
+    
+    .navbar {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      padding: 0;
+      margin: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 8px 32px rgba(26, 54, 93, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 18px 28px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      color: #4299e1;
+    }
+    
+    .navbar a.active {
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+      color: white;
+    }
+    
+    .page-header {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 40%, #2c5282 100%);
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      top: -200px;
+      right: -200px;
+    }
+    
+    .page-header h1 {
+      margin: 0;
+      font-size: 52px;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -1px;
+    }
+    
+    .container-custom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 40px 0;
+    }
+    
+    .contact-info {
+      background: white;
+      border-radius: 16px;
+      padding: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .contact-info:hover {
+      box-shadow: 0 20px 50px rgba(26, 54, 93, 0.15);
+      transform: translateY(-6px);
+    }
+    
+    .contact-info h3 {
+      color: #1a365d;
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+      font-size: 24px;
+      font-weight: 800;
+      position: relative;
+    }
+    
+    .contact-info h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #4299e1 0%, #3182ce 100%);
+      border-radius: 2px;
+    }
+    
+    .contact-info h4 {
+      color: #1a365d;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    
+    .contact-info p {
+      color: #4a5568;
+      margin: 10px 0;
+      font-size: 15px;
+      line-height: 1.8;
+      font-weight: 500;
+    }
+    
+    .contact-info a {
+      color: #4299e1;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-info a:hover {
+      color: #3182ce;
+      text-decoration: underline;
+    }
+    
+    .form-container {
+      background: white;
+      border-radius: 16px;
+      padding: 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+    
+    .form-container h2 {
+      color: #1a365d;
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 800;
+      position: relative;
+    }
+    
+    .form-container h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #4299e1 0%, #3182ce 100%);
+      border-radius: 2px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #1a365d;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="phone"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid rgba(26, 54, 93, 0.1);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      box-sizing: border-box;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: #f8f9fa;
+      color: #2d3748;
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="phone"]:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: #4299e1;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.1);
+    }
+    
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    
+    button {
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      color: white;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      box-shadow: 0 8px 20px rgba(66, 153, 225, 0.3);
+    }
+    
+    button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(66, 153, 225, 0.4);
+    }
+    
+    button:active {
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      font-size: 14px;
+      font-weight: 500;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="contact.html" class="active">Contact</a>
+</div>
+
+<!-- Page Header -->
+<div class="page-header">
+  <h1>Contact Us</h1>
+</div>
+
+<!-- Main Content -->
+<div class="container-custom">
+  <p style="text-align: center; font-size: 18px; margin-bottom: 30px;">Have a question or interested in our services? We'd love to hear from you! Get in touch with us today.</p>
+
+  <div class="contact-container">
+    <!-- Contact Information -->
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      
+      <div style="margin-bottom: 20px;">
+        <h4 style="color: #2c3e50; margin-bottom: 5px;">Email</h4>
+        <p><a href="mailto:info@upgeospatial.com" style="color: #3498db; text-decoration: none;">info@upgeospatial.com</a></p>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <h4 style="color: #2c3e50; margin-bottom: 5px;">Phone</h4>
+        <p><a href="tel:+1-555-123-4567" style="color: #3498db; text-decoration: none;">+1 (555) 123-4567</a></p>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <h4 style="color: #2c3e50; margin-bottom: 5px;">Website</h4>
+        <p><a href="https://www.upgeospatial.com" style="color: #3498db; text-decoration: none;">www.upgeospatial.com</a></p>
+      </div>
+
+      <div>
+        <h4 style="color: #2c3e50; margin-bottom: 5px;">Business Hours</h4>
+        <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday & Sunday: Closed</p>
+      </div>
+
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+        <h4 style="color: #2c3e50; margin-bottom: 10px;">Quick Response</h4>
+        <p>We typically respond to inquiries within 24 business hours. For urgent matters, please call us directly.</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="form-container">
+      <h2>Send Us a Message</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject *</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <p style="font-size: 12px; color: #666; margin-top: 15px;">* Required fields</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 UpGeospatial. All rights reserved. | www.upgeospatial.com</p>
+</footer>
+
+</body>
+</html>

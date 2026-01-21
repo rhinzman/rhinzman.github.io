@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="Portfolio - Rawan Hinzman" name="description">
+  <meta name="google" content="notranslate" />
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <title>Portfolio - UpGeospatial</title>
+
+  <link href="./main.d8e0d294.css" rel="stylesheet">
+  <link href="./override.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #2d3748;
+      background: #ffffff;
+    }
+    
+    .navbar {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      padding: 0;
+      margin: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 8px 32px rgba(26, 54, 93, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 18px 28px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      color: #4299e1;
+    }
+    
+    .navbar a.active {
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+      color: white;
+    }
+    
+    .page-header {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 40%, #2c5282 100%);
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      top: -200px;
+      right: -200px;
+    }
+    
+    .page-header h1 {
+      margin: 0;
+      font-size: 52px;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -1px;
+    }
+    
+    .container-custom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 50px;
+      margin: 40px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    
+    .card:hover {
+      box-shadow: 0 20px 50px rgba(26, 54, 93, 0.15);
+      transform: translateY(-6px);
+    }
+    
+    .card h2 {
+      color: #1a365d;
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      font-size: 36px;
+      font-weight: 800;
+      position: relative;
+    }
+    
+    .card h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #4299e1 0%, #3182ce 100%);
+      border-radius: 2px;
+    }
+    
+    .card h3 {
+      color: #2c5282;
+      font-size: 22px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    
+    .about-section {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    .about-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(26, 54, 93, 0.2);
+    }
+    
+    .about-section p {
+      color: #4a5568;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 35px;
+      margin: 40px 0;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #4299e1 0%, #3182ce 100%);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 60px rgba(26, 54, 93, 0.15);
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    
+    .project-content {
+      padding: 30px;
+    }
+    
+    .project-content h3 {
+      margin-top: 0;
+      color: #1a365d;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .project-content p {
+      color: #4a5568;
+      font-size: 14px;
+      margin: 12px 0;
+      line-height: 1.7;
+    }
+    
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, #4299e1, #3182ce);
+      color: white;
+      padding: 12px 28px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+      letter-spacing: 0.5px;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(66, 153, 225, 0.4);
+    }
+    
+    .work-experience {
+      background: linear-gradient(135deg, rgba(66, 153, 225, 0.06), rgba(44, 82, 130, 0.03));
+      padding: 30px;
+      border-left: 5px solid #4299e1;
+      margin: 25px 0;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .work-experience:hover {
+      border-left-color: #2c5282;
+      background: linear-gradient(135deg, rgba(66, 153, 225, 0.1), rgba(44, 82, 130, 0.06));
+    }
+    
+    .work-experience .date {
+      color: #4299e1;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+    
+    .work-experience h3 {
+      margin: 12px 0 18px 0;
+      color: #1a365d;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .work-experience ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+    
+    .work-experience li {
+      margin: 10px 0;
+      line-height: 1.8;
+      color: #4a5568;
+      font-size: 15px;
+    }
+    
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .education-card {
+      background: linear-gradient(135deg, rgba(66, 153, 225, 0.06), rgba(44, 82, 130, 0.03));
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(66, 153, 225, 0.15);
+      transition: all 0.3s ease;
+    }
+    
+    .education-card:hover {
+      border-color: #4299e1;
+      background: linear-gradient(135deg, rgba(66, 153, 225, 0.1), rgba(44, 82, 130, 0.06));
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(66, 153, 225, 0.15);
+    }
+    
+    .education-card .date {
+      color: #4299e1;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+    
+    .education-card h3 {
+      margin: 15px 0;
+      color: #1a365d;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .education-card p {
+      margin: 8px 0;
+      color: #4a5568;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    
+    .social-buttons {
+      margin: 30px 0;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .social-buttons a {
+      display: inline-block;
+      background: linear-gradient(135deg, #4299e1, #3182ce);
+      color: white;
+      padding: 14px 32px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+      letter-spacing: 0.5px;
+    }
+    
+    .social-buttons a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(66, 153, 225, 0.4);
+    }
+    
+    @media (max-width: 768px) {
+      .about-section {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      font-size: 14px;
+      font-weight: 500;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html" class="active">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Page Header -->
+<div class="page-header">
+  <h1>My Portfolio</h1>
+</div>
+
+<!-- Main Content -->
+<div class="container-custom">
+
+  <!-- About Me Section -->
+  <div class="card">
+    <h2>About Me</h2>
+    <div class="about-section">
+      <div class="about-image">
+        <img src="./assets/hiddencoast.jfif" alt="Rawan Hinzman" width="250">
+      </div>
+      <div>
+        <p>Motivated, experienced, bilingual GIS Specialist with more than five years of experience utilizing Geographic Information Technologies, aiming to thrive as a GIS Developer in the next chapter of my life.</p>
+        <p>I have a strong background in geospatial analysis, database management, web application development, and enterprise GIS solutions. My passion is transforming complex spatial data into actionable insights and developing innovative solutions that solve real-world problems.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Projects -->
+  <div class="card">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="./assets/Delta%20County.png" alt="Delta County" class="project-image" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200?text=Delta+County';">
+        <div class="project-content">
+          <h3>Delta County Project</h3>
+          <p><small>December 2025</small></p>
+          <p>Comprehensive GIS analysis and mapping for Delta County regional planning initiatives.</p>
+          <a href="https://rhinzman.github.io/Delta-County/" target="_blank" rel="noopener" class="btn-primary">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="./assets/Sustainability%20Study.png" alt="Sustainability Study" class="project-image" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200?text=ArcGIS+Experience';">
+        <div class="project-content">
+          <h3>ArcGIS Experience</h3>
+          <p><small>2025</small></p>
+          <p>Interactive ArcGIS Experience application for spatial data visualization and exploration.</p>
+          <a href="https://experience.arcgis.com/experience/4adac44d9c9346f3a563af1fc577c2ed" target="_blank" rel="noopener" class="btn-primary">Open Experience</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="./assets/Fetch.JPG" alt="Property Parcel Viewer" class="project-image" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200?text=Property+Viewer';">
+        <div class="project-content">
+          <h3>Property Parcel Viewer</h3>
+          <p><small>2017-2020</small></p>
+          <p>Web-based GIS application for property parcel viewing and analysis with advanced query capabilities.</p>
+          <a href="https://app.fetchgis.com/?currentMap=cuppad" target="_blank" rel="noopener" class="btn-primary">View Application</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Work Experience -->
+  <div class="card">
+    <h2>Work Experience</h2>
+
+    <div class="work-experience">
+      <small class="date">01/2025 - Present</small>
+      <h3>Sr. GIS Specialist - C2AE</h3>
+      <ul>
+        <li>Sr. GIS Specialist for utility infrastructure construction engineering projects (mapping, as-built, QA/QC)</li>
+        <li>Manage geodatabases and field-data collection workflows for construction inspection and asset tracking</li>
+        <li>Coordinate GIS integration with engineering and construction management teams and contractors</li>
+        <li>Develop web maps, dashboards, and tools to support construction progress reporting and utility asset management</li>
+      </ul>
+    </div>
+
+    <div class="work-experience">
+      <small class="date">11/2023 - 01/2025</small>
+      <h3>GIS Analyst - City of Detroit</h3>
+      <ul>
+        <li>Database queries in Postgres and SQL Server</li>
+        <li>Geocoder development</li>
+        <li>GitHub project tracking and repository management</li>
+        <li>Esri GIS Enterprise deployment and management</li>
+        <li>Branch Versioning setup in Esri Enterprise portal</li>
+        <li>Maps and application creation using JavaScript and open-source libraries</li>
+        <li>Challenge census population estimate and population analysis</li>
+      </ul>
+    </div>
+
+    <div class="work-experience">
+      <small class="date">2017 - Present</small>
+      <h3>GIS Specialist - CUPPAD</h3>
+      <ul>
+        <li>Administer all GIS licenses/extensions, administer geodatabase in a sql server, and manage software updates</li>
+        <li>High proficiency using Esri desktop and ArcGIS applications</li>
+        <li>Edit, maintain, and manage parcels within parcel fabric between ArcPro Desktop and SQL server supporting an Enterprise Environment</li>
+        <li>Perform spatial analysis using ArcGIS Desktop, ArcGIS Online, and Business Analyst/Community Analyst extensions</li>
+        <li>Create web and mobile applications using AppStudio and other ArcGIS Online applications for various projects, and publish it on App Store and Google Play</li>
+        <li>Delivering advanced applications using Esri software to enhance decision making and data management for local units of government</li>
+      </ul>
+    </div>
+
+    <div class="work-experience">
+      <small class="date">2016 - 2018</small>
+      <h3>Supplemental Instructor in Math - Bay College</h3>
+      <ul>
+        <li>Reinforce lessons taught by the instructors by reviewing the material in classroom</li>
+        <li>Prepare worksheets and learning activities that are intended to help students learning in more relaxing environment</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="card">
+    <h2>Education</h2>
+    <div class="education-grid">
+      <div class="education-card">
+        <small class="date">2005 - 2010</small>
+        <h3>Bachelor's Degree</h3>
+        <p><strong>Geology/Hydrogeology</strong></p>
+        <p>Damascus University</p>
+      </div>
+
+      <div class="education-card">
+        <small class="date">2016 - 2018</small>
+        <h3>Associate Degree</h3>
+        <p><strong>Geographic Information System</strong></p>
+        <p>Bay De Noc College</p>
+      </div>
+
+      <div class="education-card">
+        <small class="date">2021 - 2025</small>
+        <h3>Master's Degree</h3>
+        <p><strong>GIS Development</strong></p>
+        <p>University of Wisconsin-Madison</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Languages -->
+  <div class="card">
+    <h2>Languages</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+      <div style="padding: 15px; background: #f9f9f9; border-radius: 5px;">
+        <h3 style="margin-top: 0;">English</h3>
+        <p><strong>Proficiency:</strong> Bilingual</p>
+      </div>
+      <div style="padding: 15px; background: #f9f9f9; border-radius: 5px;">
+        <h3 style="margin-top: 0;">Arabic</h3>
+        <p><strong>Proficiency:</strong> Native</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Links -->
+  <div class="card">
+    <h2>Connect With Me</h2>
+    <p class="social-buttons">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:info@upgeospatial.com">Email</a>
+      <a href="contact.html">Contact Form</a>
+    </p>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 UpGeospatial. All rights reserved. | www.upgeospatial.com</p>
+</footer>
+
+</body>
+</html>

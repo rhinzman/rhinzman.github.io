@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="About UpGeospatial - GIS Services" name="description">
+  <meta name="google" content="notranslate" />
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <title>About - UpGeospatial</title>
+
+  <link href="./main.d8e0d294.css" rel="stylesheet">
+  <link href="./override.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #2d3748;
+      background: #ffffff;
+    }
+    
+    .navbar {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      padding: 0;
+      margin: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 8px 32px rgba(26, 54, 93, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 18px 28px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      color: #4299e1;
+    }
+    
+    .navbar a.active {
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+      color: white;
+    }
+    
+    .page-header {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 40%, #2c5282 100%);
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      top: -200px;
+      right: -200px;
+    }
+    
+    .page-header h1 {
+      margin: 0;
+      font-size: 52px;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -1px;
+    }
+    
+    .container-custom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 50px;
+      margin: 40px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    
+    .card:hover {
+      box-shadow: 0 20px 50px rgba(26, 54, 93, 0.15);
+      transform: translateY(-6px);
+    }
+    
+    .card h2 {
+      color: #1a365d;
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      font-size: 36px;
+      font-weight: 800;
+      position: relative;
+    }
+    
+    .card h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #4299e1 0%, #3182ce 100%);
+      border-radius: 2px;
+    }
+    
+    .card ul {
+      list-style: none;
+    }
+    
+    .card li {
+      padding: 16px 0;
+      padding-left: 40px;
+      position: relative;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #4a5568;
+      font-weight: 500;
+    }
+    
+    .card li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #4299e1;
+      font-weight: 900;
+      font-size: 20px;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .team-member {
+      background: linear-gradient(135deg, rgba(66, 153, 225, 0.06), rgba(44, 82, 130, 0.03));
+      border: 1px solid rgba(66, 153, 225, 0.15);
+      border-radius: 12px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+    }
+    
+    .team-member:hover {
+      border-color: #4299e1;
+      background: linear-gradient(135deg, rgba(66, 153, 225, 0.1), rgba(44, 82, 130, 0.06));
+      transform: translateY(-6px);
+      box-shadow: 0 15px 40px rgba(66, 153, 225, 0.15);
+    }
+    
+    .team-member h3 {
+      color: #1a365d;
+      margin: 20px 0 15px 0;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .team-member p {
+      color: #4a5568;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+      font-size: 14px;
+      font-weight: 500;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html" class="active">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Page Header -->
+<div class="page-header">
+  <h1>About UpGeospatial</h1>
+</div>
+
+<!-- Main Content -->
+<div class="container-custom">
+  <div class="card">
+    <h2>Our Mission</h2>
+    <p>At UpGeospatial, our mission is to empower organizations with cutting-edge GIS solutions that unlock the full potential of geospatial data. We are committed to delivering exceptional quality, innovation, and value in every project we undertake.</p>
+  </div>
+
+  <div class="card">
+    <h2>Our Story</h2>
+    <p>Founded with a passion for Geographic Information Systems, UpGeospatial has grown to become a trusted provider of geospatial services. Our team combines technical expertise with practical industry knowledge to deliver solutions that make a real difference.</p>
+    <p>We work with diverse clients across multiple sectors including urban planning, environmental management, resource management, and infrastructure development. Each project is an opportunity to demonstrate our commitment to excellence and innovation.</p>
+  </div>
+
+  <div class="card">
+    <h2>Our Values</h2>
+    <ul>
+      <li><strong>Innovation:</strong> We stay at the forefront of GIS technology and methodologies</li>
+      <li><strong>Quality:</strong> We are committed to delivering high-quality solutions that exceed expectations</li>
+      <li><strong>Integrity:</strong> We conduct our business with honesty, transparency, and ethical principles</li>
+      <li><strong>Collaboration:</strong> We work closely with clients to understand their needs and deliver tailored solutions</li>
+      <li><strong>Continuous Improvement:</strong> We constantly seek to enhance our services and expertise</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Our Team</h2>
+    <p>Our team consists of experienced GIS professionals with expertise in spatial analysis, cartography, database management, and web development. We bring diverse backgrounds and specialized skills to every project.</p>
+    
+    <div class="team-grid">
+      <div class="team-member">
+        <h3>GIS Specialists</h3>
+        <p>Expert analysts and developers with advanced certifications in Geographic Information Systems</p>
+      </div>
+      <div class="team-member">
+        <h3>Cartographers</h3>
+        <p>Creative professionals who craft compelling visual representations of spatial data</p>
+      </div>
+      <div class="team-member">
+        <h3>Database Administrators</h3>
+        <p>Skilled professionals managing complex geospatial databases and data infrastructure</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Why Partner With Us?</h2>
+    <ul>
+      <li>Proven track record of successful projects across various industries</li>
+      <li>Custom solutions tailored to your specific organizational needs</li>
+      <li>Access to cutting-edge GIS technology and tools</li>
+      <li>Dedicated support and ongoing consultation</li>
+      <li>Competitive pricing with transparent cost structures</li>
+      <li>Strong commitment to client satisfaction and long-term partnerships</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 UpGeospatial. All rights reserved. | www.upgeospatial.com</p>
+</footer>
+
+</body>
+</html>
