@@ -152,15 +152,19 @@
       letter-spacing: 0.5px;
     }
     
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .hero .hero-logo {
+      height: 80px;
+      width: auto;
+      margin: 40px 0 20px 0;
+      opacity: 0.6;
+      filter: brightness(0) invert(1);
+      animation: fadeInUp 1s ease-out 0.5s both;
+      transition: all 0.3s ease;
+    }
+    
+    .hero .hero-logo:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
     }
     
     .container-custom {
@@ -351,6 +355,7 @@
 <!-- Hero Section -->
 <div class="hero">
   <h1>UpGeospatial</h1>
+  <img src="./assets/a clean, modern land.png" alt="UpGeospatial Logo" class="hero-logo">
   <p>Professional GIS Services & Geospatial Solutions</p>
 </div>
 
